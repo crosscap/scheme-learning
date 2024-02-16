@@ -1,0 +1,10 @@
+(define-syntax for
+    (syntax-rules ()
+        ((_ (i from to) b1 ...)
+         (let loop ((i from))
+            (if (< i to)
+                (begin b1 ... (loop(+ i 1))))))
+        ((_ (i from to step) b1 ...)
+         (let loop ((i from))
+            (if (< i to)
+                (begin b1 ... (loop(+ i step))))))))
